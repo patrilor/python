@@ -6,9 +6,15 @@ class Plant:
 
     def show(self):
         print(
-            f"Created: {self.name}: {round(self.height, 1)}cm, "
+            f"{self.name}: {round(self.height, 1)}cm, "
             f"{self.age} days old"
         )
+
+    def grow(self, dh):
+        self.height += dh
+
+    def age(self):
+        self.age_days += 1
 
 
 def main():
@@ -18,11 +24,11 @@ def main():
     cactus = Plant("Cactus", 5.0, 90)
     sunflower = Plant("Sunflower", 80.0, 45)
     fern = Plant("Fern", 15.0, 120)
-    rose.show()
-    oak.show()
-    cactus.show()
-    sunflower.show()
-    fern.show()
+    flowers = [rose, oak, cactus, sunflower, fern]
+    for n in flowers:
+        print("Created: ", end="")
+        n.show()
+    rose.grow(.8)
 
 
 if __name__ == "__main__":
