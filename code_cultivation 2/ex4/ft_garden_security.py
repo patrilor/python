@@ -16,6 +16,7 @@ class Plant:
             print("Height update rejected")
             return
         self._height = height
+        print(f"Height updated: {height}cm")
 
     def get_age(self):
         return self._age
@@ -26,6 +27,7 @@ class Plant:
             print("Age update rejected")
             return
         self._age = age
+        print(f"Age updated: {age} days")
 
     def show(self):
         print(
@@ -39,15 +41,13 @@ def main():
     rose = Plant("Rose", 15.0, 10)
     print("Plant created: ", end="")
     rose.show()
-    print()
-    rose.set_height(25)
-    print(f"Height updated: {rose._height}cm")
+    print("\n")
+    rose.set_height(25.0)
     rose.set_age(30)
-    print(f"Age updated: {rose._age} days")
-    print()
+    print("\n")
     rose.set_height(-4)
     rose.set_age(-5)
-    print()
+    print("\n")
     print("Current state: ", end="")
     rose.show()
 
