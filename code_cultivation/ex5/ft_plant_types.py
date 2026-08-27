@@ -5,6 +5,34 @@ class Plant:
         self.set_height(height)
         self.set_age(age)
 
+
+class Flower(Plant):
+    def __init__(self, name: str, height: float, age: int, color: str) -> None:
+        super().__init__(name, height, age)
+        self.color = color
+
+    def bloom(self) -> None:
+        print(f"{self.name} is blooming beautifully!")
+
+
+class Tree(Plant):
+    def __init__(self, name: str, height: float, age: int,
+                 trunk_diameter: float) -> None:
+        super().__init__(name, height, age)
+        self.trunk_diameter = trunk_diameter
+
+    def produce_shade(self) -> None:
+
+
+class Vegetable(Plant):
+    def __init__(self, name: str, height: float, age: int,
+                 harvest_season: str, nutritional_value: int) -> None:
+        super().__init__(name, height, age)
+        self.harvest_season = harvest_season
+        self.nutritional_value = nutritional_value
+
+
+"""
     def get_height(self) -> float:
         return self._height
 
@@ -52,3 +80,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+"""

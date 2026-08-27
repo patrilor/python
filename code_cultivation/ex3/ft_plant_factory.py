@@ -1,23 +1,23 @@
 class Plant:
-    def __init__(self, name, height, age):
+    def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name
         self.height = height
-        self.age = age
+        self.age_days = age
 
-    def show(self):
+    def show(self) -> None:
         print(
             f"{self.name}: {round(self.height, 1)}cm, "
-            f"{self.age} days old"
+            f"{self.age_days} days old"
         )
 
-    def grow(self, dh):
+    def grow(self, dh: float) -> None:
         self.height += dh
 
-    def age(self):
+    def age(self) -> None:
         self.age_days += 1
 
 
-def main():
+def main() -> None:
     print("=== Plant Factory Output ===")
     rose = Plant("Rose", 25.0, 30)
     oak = Plant("Oak", 200.0, 365)
@@ -28,7 +28,6 @@ def main():
     for n in flowers:
         print("Created: ", end="")
         n.show()
-    rose.grow(.8)
 
 
 if __name__ == "__main__":
